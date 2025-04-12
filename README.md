@@ -23,6 +23,71 @@ The project is under active development. Here's the current status:
 🚧 Testing infrastructure (to be implemented)  
 🚧 CI/CD pipeline (to be implemented)  
 
+## Local Development Guide
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Google Cloud Platform account with Sheets API enabled
+- OpenAI or Anthropic API access
+
+### Backend Setup
+
+1. Navigate to the root project directory:
+   ```bash
+   cd sand-finance
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the backend server:
+   ```bash
+   npm start
+   ```
+   The backend will run on http://localhost:3000
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd src/frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a public folder (if missing):
+   ```bash
+   mkdir -p public
+   ```
+
+4. Start the frontend development server:
+   ```bash
+   npm start
+   ```
+   The frontend will run on http://localhost:3001 and proxy API requests to the backend
+
+### Testing the Application
+
+1. Open your browser and navigate to:
+   ```
+   http://localhost:3001
+   ```
+
+2. The frontend should be visible and able to communicate with the backend API
+
+### Running Both Services
+
+Run the following command from the project root to start both backend and frontend:
+```bash
+npm run dev:all
+```
+
 ## Architecture Overview
 
 1. **Data Sources Layer**
@@ -87,45 +152,6 @@ The project is under active development. Here's the current status:
 - All API keys and credentials stored securely outside the repository
 - JWT-based authentication with role-based access control
 
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-- Google Cloud Platform account with Sheets API enabled
-- OpenAI or Anthropic API access
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone <repository-url>
-   cd sand-finance
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   cd src/frontend
-   npm install
-   cd ../..
-   ```
-
-3. Create environment files
-   - Copy `.env.example` to `/home/simrob1729/keys/.env` (external keys directory)
-   - Fill in the required environment variables
-
-4. Set up the database
-   ```bash
-   npm run setup-db
-   ```
-
-5. Start the development server
-   ```bash
-   npm run dev:all
-   ```
-
 ## Available Scripts
 
 - `npm start`: Starts the backend server
@@ -151,19 +177,20 @@ sand-finance/
 │   ├── database/
 │   │   └── setup.js        # Database initialization
 │   └── frontend/           # React application
-│       ├── components/     # React components
-│       ├── hooks/          # Custom React hooks
-│       ├── pages/          # Page components
-│       ├── services/       # API client services
-│       ├── utils/          # Utility functions
-│       ├── App.jsx         # Root component
-│       ├── index.jsx       # Application entry point
+│       ├── public/         # Static files (index.html, manifest.json)
+│       ├── src/            # React source code
+│       │   ├── components/ # React components
+│       │   ├── services/   # API client services
+│       │   ├── hooks/      # Custom React hooks
+│       │   ├── pages/      # Page components
+│       │   ├── utils/      # Utility functions
+│       │   ├── assets/     # Static assets
+│       │   ├── App.jsx     # Root component
+│       │   └── index.jsx   # Application entry point
 │       └── package.json    # Frontend dependencies
 ├── .env.example            # Template for environment variables
 └── package.json            # Project dependencies and scripts
 ```
-
-**Note:** The current implementation has a nested structure with duplicate folders that should be restructured in a future refactoring.
 
 ## Contributing
 
