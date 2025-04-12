@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+../.env
+
+# Build artifacts
+/build
+/dist
+/.next/
+/out/
+
+# Cache and logs
+.cache/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+logs/
+*.log
+
+# Testing and coverage
+/coverage
+.nyc_output/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
